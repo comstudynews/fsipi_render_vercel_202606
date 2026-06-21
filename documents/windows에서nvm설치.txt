@@ -1,0 +1,21 @@
+# 기존 폴더가 남았는지 테스트
+Test-Path "C:\Program Files\nodejs"
+# 기존 node.js 삭제
+Remove-Item "C:\Program Files\nodejs" -Recurse -Force
+
+
+---
+#PowerShell에서 NVM 설치
+winget install --exact --id CoreyButler.NVMforWindows --source winget
+
+# PowerShell을 완전히 종료한 후 관리자 권한으로 다시 실행
+
+nvm install 22.16.0
+nvm install 24.15.0
+
+nvm use 22.16.0
+
+node -v
+npm -v
+nvm current
+where.exe node
