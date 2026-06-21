@@ -1,0 +1,20 @@
+{
+  "name": "fsipi-website-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace @fsipi/web",
+    "dev:api": "npm run dev --workspace @fsipi/api",
+    "build": "npm run build --workspace @fsipi/api && npm run build --workspace @fsipi/web",
+    "typecheck": "npm run typecheck --workspace @fsipi/api && npm run typecheck --workspace @fsipi/web",
+    "test": "node scripts/smoke-api.mjs",
+    "verify": "npm run typecheck && npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=22.16.0 <23"
+  }
+}
