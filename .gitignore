@@ -10,3 +10,5 @@ coverage/
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+
+apps/api/node_modules/

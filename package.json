@@ -7,14 +7,24 @@
     "apps/api"
   ],
   "scripts": {
-    "dev:web": "npm run dev --workspace @fsipi/web",
-    "dev:api": "npm run dev --workspace @fsipi/api",
-    "build": "npm run build --workspace @fsipi/api && npm run build --workspace @fsipi/web",
-    "typecheck": "npm run typecheck --workspace @fsipi/api && npm run typecheck --workspace @fsipi/web",
+    "dev:web": "npm run dev --workspace=@fsipi/web",
+    "dev:api": "npm run dev --workspace=@fsipi/api",
+
+    "build:web": "npm run build --workspace=@fsipi/web",
+    "build:api": "npm run build --workspace=@fsipi/api",
+    "build": "npm run build:api && npm run build:web",
+
+    "start": "npm run start --workspace=@fsipi/api",
+    "start:api": "npm run start --workspace=@fsipi/api",
+
+    "typecheck:web": "npm run typecheck --workspace=@fsipi/web",
+    "typecheck:api": "npm run typecheck --workspace=@fsipi/api",
+    "typecheck": "npm run typecheck:api && npm run typecheck:web",
+
     "test": "node scripts/smoke-api.mjs",
     "verify": "npm run typecheck && npm run build && npm test"
   },
   "engines": {
-    "node": ">=22.16.0 <23"
+    "node": "22.16.0"
   }
 }
